@@ -7,6 +7,8 @@
           <h1 slot="title">- Wonderfull Quote -</h1>
           <h2 slot="content">using slots</h2>
           <span slot="content">{{this.quoteTitle}}</span>
+          <h4 slot="subtitle">Ein Untertitel</h4>
+          <span>Default</span>
         </appQuote>
       </div>
     </div>
@@ -15,6 +17,8 @@
 
 <script>
 import Quote from "./components/Quote.vue";
+import Author from "./components/Author.vue";
+import New from "./components/New.vue";
 
 export default {
   data: function() {
@@ -23,7 +27,9 @@ export default {
     };
   },
   components: {
-    appQuote: Quote
+    appQuote: Quote,
+    appNew: New,
+    appAuthor: Author
   }
 };
 </script>
