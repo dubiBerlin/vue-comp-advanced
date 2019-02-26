@@ -11,10 +11,11 @@
         <!-- component is reserved word in vue. It gets bind to the string which is in the selectedComponent
         data variable, which contains the names of the components defined in the export default components.
         So its loads the apropriate component according to the content in selectedComponent.-->
-        <component :is="selectedComponent">
-          <p>default content</p>
-        </component>
-
+        <keep-alive>
+          <component :is="selectedComponent">
+            <p>default content</p>
+          </component>
+        </keep-alive>
         <!-- <template v-if="selectedComponent == 'appQuote'">
         <appQuote>-->
         <!-- slot="identifier" so the child knows where to put the content-->
