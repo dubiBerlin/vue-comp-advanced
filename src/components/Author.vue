@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="author">New author</h3>
+    <h3 class="author">New Author!</h3>
   </div>
 </template>
 
