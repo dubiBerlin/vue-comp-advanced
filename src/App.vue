@@ -7,10 +7,18 @@
         <button @click="selectedComponent = 'appNew'">New</button>
         <hr>
         <p>{{selectedComponent}}</p>
-        <template v-if="selectedComponent == 'appQuote'">
-          <appQuote>
-            <!-- slot="identifier" so the child knows where to put the content-->
-            <h1 slot="title">- Wonderfull Quote -</h1>
+
+        <!-- component is reserved word in vue. It gets bind to the string which is in the selectedComponent
+        data variable, which contains the names of the components defined in the export default components.
+        So its loads the apropriate component according to the content in selectedComponent.-->
+        <component :is="selectedComponent">
+          <p>default content</p>
+        </component>
+
+        <!-- <template v-if="selectedComponent == 'appQuote'">
+        <appQuote>-->
+        <!-- slot="identifier" so the child knows where to put the content-->
+        <!-- <h1 slot="title">- Wonderfull Quote -</h1>
             <h2 slot="content">using slots</h2>
             <span slot="content">{{this.quoteTitle}}</span>
             <h4 slot="subtitle">Ein Untertitel</h4>
@@ -24,7 +32,7 @@
         <hr>
         <template v-if="selectedComponent == 'appNew'">
           <appNew></appNew>
-        </template>
+        </template>-->
       </div>
     </div>
   </div>
