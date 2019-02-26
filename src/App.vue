@@ -2,7 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <appQuote quote="Another quote!"></appQuote>
+        <appQuote>
+          <h1>- Wonderfull Quote -</h1>
+          <h2>using slots</h2>
+        </appQuote>
       </div>
     </div>
   </div>
