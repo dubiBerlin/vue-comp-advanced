@@ -15,7 +15,15 @@ export default {
       counter: 0
     };
   },
-  props: [""]
+  destroyed() {
+    console.log("Destroyed");
+  },
+  deactivated() {
+    console.log("deactivated");
+  },
+  activated() {
+    console.log("activated");
+  }
 };
 </script>
 
