@@ -11,7 +11,13 @@
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" class="form-control" v-model="userData.password">
+            <!-- v.model.lazy aktualisiert das v-model nur wenn man einen focus out event durchführt -->
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              v-model.lazy="userData.password"
+            >
           </div>
           <div class="form-group">
             <label for="age">Age</label>
