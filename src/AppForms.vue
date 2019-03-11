@@ -81,7 +81,8 @@
             <p>Mail: {{userData.email}}</p>
             <p>Password: {{userData.password}}</p>
             <p>Age: {{userData.age}}</p>
-            <p>Message: {{message}}</p>
+            <!--  style="white-space: pre" dadurch behält man die LineBreaks die im TextArea erzeugt wurden durch das drücken der enter Taste -->
+            <p style="white-space: pre">Message: {{message}}</p>
             <p>
               <strong>Send Mail?</strong>
             </p>
