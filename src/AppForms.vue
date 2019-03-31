@@ -59,19 +59,26 @@
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 from-group">
           <label for="priority">Priority</label>
           <select id="priority" class="form-control" v-model="selectedPriority">
-            <option v-for="priority in priorities" :selected="priority === 'Medium'">{{priority}}</option>
+            <option v-for="priority in priorities" :key="{priority}">{{priority}}</option>
           </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 from-group">
+          <appSwitch v-model="dataSwitch"></appSwitch>
         </div>
       </div>
       <hr>
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-          <button class="btn btn-primary">Submit!</button>
+          <!-- @click.prevent verhindert dass die Daten versendet werden  -->
+          <button class="btn btn-primary" @click.prevent="sumbitted">Submit!</button>
         </div>
       </div>
     </form>
     <hr>
-    <div class="row">
+    <div class="row" v-if="isSubmitted">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -91,7 +98,7 @@
             </ul>
             <p>Gender:{{gender}}</p>
             <p>Priority:</p>
-            <p>Switched:</p>
+            <p>Switched:{{dataSwitch}}</p>
           </div>
         </div>
       </div>
@@ -100,6 +107,7 @@
 </template>
 
 <script>
+import Switch from "./components/Forms/Switch.vue";
 export default {
   data() {
     return {
@@ -112,8 +120,18 @@ export default {
       sendMail: [], // die values von checkboxen werden im array gespeichert durch v-model
       gender: "Male",
       priorities: ["High", "Medium", "Low"],
-      selectedPriority="High"
+      selectedPriority: "High",
+      dataSwitch: true,
+      isSubmitted: false
     };
+  },
+  components: {
+    appSwitch: Switch
+  },
+  methods: {
+    sumbitted() {
+      this.isSubmitted = true;
+    }
   }
 };
 </script>
