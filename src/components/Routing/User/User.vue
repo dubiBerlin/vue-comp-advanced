@@ -19,6 +19,8 @@
       <option value="/wie">Wie</option>
       <option value="/was">Was</option>
     </select>
+    <hr>
+    <router-view></router-view>
   </div>
 </template>
 <script >
