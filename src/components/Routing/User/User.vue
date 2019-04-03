@@ -36,12 +36,6 @@ export default {
       console.log("selectIt:\n", this.$router);
       this.$router.push(`/${this.selectedValue}`);
     },
-    watch: {
-      //  wird jedesmal gefeuert wenn die route sich ändert
-      $route(to, from) {
-        this.id = to.params.id;
-      }
-    },
     selectIt2() {
       let fullPath = this.$router.history.current.fullPath;
       console.log("router:\n ", this.$router);
@@ -50,6 +44,13 @@ export default {
     },
     navigateToHome() {
       this.$router.push("/");
+    }
+  },
+  watch: {
+    //  wird jedesmal gefeuert wenn die route sich ändert
+    // nimmt den Parameter id der in der route.js definiert wurde und fügt ihn in die variable id ein.
+    $route(to, from) {
+      this.id = to.params.id;
     }
   }
 };
