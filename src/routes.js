@@ -7,7 +7,11 @@ import UserEdit from "./components/Routing/User/UserEdit.vue";
 import { firstPartRoutes, secondPartRoutes } from "./assets/routesResources";
 
 export const routes = [
-  { path: "/", component: Home, alias: ["/hi", "/gutenacht"] },
+  {
+    path: "/",
+    component: Home,
+    alias: ["/hi", "/gutenacht"]
+  },
   {
     path: "/user",
     component: User,

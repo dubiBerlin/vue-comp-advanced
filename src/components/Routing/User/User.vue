@@ -4,7 +4,7 @@
     <hr>
     <button class="btn btn-primary" @click="navigateToHome">go To Home</button>
     <p>UserID {{id}}</p>
-    <hr>
+    <!-- <hr>
     <select class="form-control" v-model="selectedValue" v-on:change="selectIt">
       <option value disabled selected>Select your option</option>
       <option value="hi">Hi</option>
@@ -18,7 +18,7 @@
       <option value="/wer">Wer</option>
       <option value="/wie">Wie</option>
       <option value="/was">Was</option>
-    </select>
+    </select>-->
     <hr>
     <router-view></router-view>
   </div>
